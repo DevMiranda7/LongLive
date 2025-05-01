@@ -2,6 +2,7 @@ package com.example.longlive;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,5 +20,13 @@ public class TelaRegistroActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         });
+
+
+        Button btnRegistrar = findViewById(R.id.buttonRegistrar);
+        btnRegistrar.setOnClickListener(v -> {
+            Intent intent = new Intent(TelaRegistroActivity.this,TelaLogadoActivity.class);
+            startActivity(intent);
+        });
+
     }
 }

@@ -29,6 +29,10 @@
             android:exported="true"
             />
 
+        <activity android:name=".TelaLogadoActivity"
+            android:exported="true"
+            />
+
     </application>
 
 </manifest>
