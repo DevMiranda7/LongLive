@@ -33,6 +33,10 @@
             android:exported="true"
             />
 
+        <activity android:name=".TelaEditarConsumoActivity"
+            android:exported="true"
+            />
+
     </application>
 
 </manifest>

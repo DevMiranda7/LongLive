@@ -9,7 +9,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/titleText"
+        android:id="@+id/titleTextHidratacao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/borda_textview"
@@ -37,7 +37,7 @@
         android:layout_height="100dp"
         android:layout_marginTop="24dp"
         android:src="@drawable/legumes"
-        app:layout_constraintTop_toBottomOf="@id/titleText"
+        app:layout_constraintTop_toBottomOf="@id/titleTextHidratacao"
         app:layout_constraintEnd_toStartOf="@id/treino"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginEnd="16dp"
@@ -49,7 +49,7 @@
         android:layout_height="92dp"
         android:layout_marginTop="24dp"
         android:src="@drawable/treino"
-        app:layout_constraintTop_toBottomOf="@id/titleText"
+        app:layout_constraintTop_toBottomOf="@id/titleTextHidratacao"
         app:layout_constraintStart_toStartOf="@id/guidelineHorizontalCenter"
         app:layout_constraintEnd_toEndOf="@id/guidelineHorizontalCenter"
         app:tint="@color/black" />
@@ -60,7 +60,7 @@
         android:layout_height="100dp"
         android:layout_marginTop="24dp"
         android:src="@drawable/img"
-        app:layout_constraintTop_toBottomOf="@id/titleText"
+        app:layout_constraintTop_toBottomOf="@id/titleTextHidratacao"
         app:layout_constraintStart_toEndOf="@id/treino"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="16dp"

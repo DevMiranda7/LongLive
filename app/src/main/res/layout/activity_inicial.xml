@@ -1,21 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF7FB">
+    android:background="#FFF7FB"
+    tools:context=".MainActivity">
 
     <!-- Barra superior -->
     <View
-        android:id="@+id/topBar"
+        android:id="@+id/topBarHidratacao"
         android:layout_width="0dp"
         android:layout_height="54dp"
+        android:layout_marginTop="40dp"
         android:background="#45474B"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/menuButton"
@@ -23,24 +34,24 @@
         android:layout_height="26dp"
         android:background="@android:color/transparent"
         android:src="@drawable/menu"
+        app:tint="@android:color/white"
         android:layout_marginStart="12dp"
-        app:tint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/topBar"
-        app:layout_constraintBottom_toBottomOf="@id/topBar"/>
+        app:layout_constraintTop_toTopOf="@id/topBarHidratacao"
+        app:layout_constraintBottom_toBottomOf="@id/topBarHidratacao" />
 
     <TextView
-        android:id="@+id/titleText"
+        android:id="@+id/titleTextHidratacao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Long Live"
         android:textColor="@android:color/white"
         android:textStyle="bold"
         android:textSize="18sp"
-        app:layout_constraintTop_toTopOf="@id/topBar"
-        app:layout_constraintBottom_toBottomOf="@id/topBar"
+        app:layout_constraintTop_toTopOf="@id/topBarHidratacao"
+        app:layout_constraintBottom_toBottomOf="@id/topBarHidratacao"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Faixa azul clara -->
     <View
@@ -48,9 +59,18 @@
         android:layout_width="0dp"
         android:layout_height="70dp"
         android:background="#9CD9FE"
-        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintTop_toBottomOf="@id/topBarHidratacao"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/blueBar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/motivationText"
@@ -63,7 +83,7 @@
         app:layout_constraintBottom_toBottomOf="@id/blueBar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="0.2"/>
+        app:layout_constraintVertical_bias="0.2" />
 
     <TextView
         android:id="@+id/consumoText"
@@ -76,7 +96,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintTop_toBottomOf="@id/blueBar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/editButton"
@@ -88,7 +108,7 @@
         android:layout_marginTop="12dp"
         app:layout_constraintTop_toBottomOf="@id/consumoText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Área dos valores e SeekBar -->
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -108,10 +128,10 @@
             android:layout_height="wrap_content"
             android:text="0 ml"
             android:textSize="14sp"
-            android:paddingStart="64dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/seekBar"/>
+            app:layout_constraintBottom_toTopOf="@id/seekBar"
+            android:layout_marginStart="64dp" />
 
         <TextView
             android:id="@+id/metaLabel"
@@ -119,9 +139,9 @@
             android:layout_height="wrap_content"
             android:text="Meta:"
             android:textSize="14sp"
-            android:paddingEnd="64dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBaseline_toBaselineOf="@id/currentValue"/>
+            app:layout_constraintBaseline_toBaselineOf="@id/currentValue"
+            android:layout_marginEnd="64dp" />
 
         <SeekBar
             android:id="@+id/seekBar"
@@ -130,7 +150,7 @@
             android:layout_marginTop="12dp"
             app:layout_constraintTop_toBottomOf="@id/currentValue"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
@@ -143,136 +163,145 @@
         android:layout_marginTop="24dp"
         app:layout_constraintTop_toBottomOf="@id/consumoArea"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Seções de Prioridade -->
-
-    <!-- Alta Prioridade -->
-    <!-- Seções de Prioridade -->
-    <LinearLayout
-        android:id="@+id/prioritySection"
+    <ScrollView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintTop_toBottomOf="@id/metasLabel"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Alta Prioridade -->
-        <TextView
-            android:id="@+id/highPriority"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Alta Prioridade"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:background="?attr/selectableItemBackground"
-            android:padding="12dp"/>
-
         <LinearLayout
-            android:id="@+id/highPriorityContainer"
+            android:id="@+id/prioritySection"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:visibility="gone"
-            android:paddingStart="16dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp">
+            android:padding="16dp">
 
-            <CheckBox
-                android:id="@+id/subHigh1"
+            <!-- Alta Prioridade -->
+            <TextView
+                android:id="@+id/highPriority"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Subtítulo A1"
-                android:padding="4dp"/>
+                android:text="Alta Prioridade"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:background="?attr/selectableItemBackground"
+                android:padding="12dp" />
 
-            <CheckBox
-                android:id="@+id/subHigh2"
+            <LinearLayout
+                android:id="@+id/highPriorityContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Subtítulo A2"
-                android:padding="4dp"/>
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <CheckBox
+                    android:id="@+id/subHigh1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Subtítulo A1"
+                    android:padding="4dp" />
+
+                <CheckBox
+                    android:id="@+id/subHigh2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Subtítulo A2"
+                    android:padding="4dp" />
+            </LinearLayout>
+
+            <!-- Média Prioridade -->
+            <TextView
+                android:id="@+id/mediumPriority"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Média Prioridade"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:background="?attr/selectableItemBackground"
+                android:padding="12dp"
+                android:layout_marginTop="8dp" />
+
+            <LinearLayout
+                android:id="@+id/mediumPriorityContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <CheckBox
+                    android:id="@+id/subMedium1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Subtítulo M1"
+                    android:padding="4dp" />
+
+                <CheckBox
+                    android:id="@+id/subMedium2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Subtítulo M2"
+                    android:padding="4dp" />
+            </LinearLayout>
+
+            <!-- Baixa Prioridade -->
+            <TextView
+                android:id="@+id/lowPriority"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Baixa Prioridade"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:background="?attr/selectableItemBackground"
+                android:padding="12dp"
+                android:layout_marginTop="8dp" />
+
+            <LinearLayout
+                android:id="@+id/lowPriorityContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <CheckBox
+                    android:id="@+id/subLow1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Subtítulo B1"
+                    android:padding="4dp" />
+
+                <CheckBox
+                    android:id="@+id/subLow2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Subtítulo B2"
+                    android:padding="4dp" />
+            </LinearLayout>
         </LinearLayout>
-
-        <!-- Média Prioridade -->
-        <TextView
-            android:id="@+id/mediumPriority"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Média Prioridade"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:background="?attr/selectableItemBackground"
-            android:padding="12dp"
-            android:layout_marginTop="8dp"/>
-
-        <LinearLayout
-            android:id="@+id/mediumPriorityContainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone"
-            android:paddingStart="16dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp">
-
-            <CheckBox
-                android:id="@+id/subMedium1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Subtítulo M1"
-                android:padding="4dp"/>
-
-            <CheckBox
-                android:id="@+id/subMedium2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Subtítulo M2"
-                android:padding="4dp"/>
-        </LinearLayout>
-
-        <!-- Baixa Prioridade -->
-        <TextView
-            android:id="@+id/lowPriority"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Baixa Prioridade"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:background="?attr/selectableItemBackground"
-            android:padding="12dp"
-            android:layout_marginTop="8dp"/>
-
-        <LinearLayout
-            android:id="@+id/lowPriorityContainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone"
-            android:paddingStart="16dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp">
-
-            <CheckBox
-                android:id="@+id/subLow1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Subtítulo B1"
-                android:padding="4dp"/>
-
-            <CheckBox
-                android:id="@+id/subLow2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Subtítulo B2"
-                android:padding="4dp"/>
-        </LinearLayout>
-
-    </LinearLayout>
-
-
-
-
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+<com.google.android.material.navigation.NavigationView
+    android:id="@+id/navigation_view"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    android:background="#FFFFFF"
+    app:menu="@menu/drawer_menu" />
+</androidx.drawerlayout.widget.DrawerLayout>
+
