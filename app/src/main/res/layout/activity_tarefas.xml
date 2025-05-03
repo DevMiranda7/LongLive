@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Título da tela -->
+    <TextView
+        android:id="@+id/inputView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tarefas"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:paddingBottom="10dp" />
+
+    <!-- Campo para o usuário adicionar uma nova tarefa -->
+    <EditText
+        android:id="@+id/editTextTarefa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Digite uma nova tarefa"
+        android:inputType="text" />
+
+    <!-- Botão para adicionar a tarefa -->
+    <Button
+        android:id="@+id/btnAdicionarTarefa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Adicionar Tarefa"
+        android:layout_marginTop="8dp" />
+
+    <!-- Contêiner onde as tarefas serão exibidas -->
+    <LinearLayout
+        android:id="@+id/tarefasContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp" />
+
+    <!-- Botão para voltar para a tela de login -->
+    <Button
+        android:id="@+id/btnVoltarLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Voltar ao Login"
+        android:layout_marginTop="16dp" />
+
+</LinearLayout>

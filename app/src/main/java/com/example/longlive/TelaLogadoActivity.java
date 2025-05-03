@@ -11,16 +11,12 @@ import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.example.longlive.R;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
 
 import com.google.android.material.navigation.NavigationView;
-
-import fragments.SeusDadosFragment;
 
 
 public class TelaLogadoActivity extends AppCompatActivity {
@@ -30,21 +26,20 @@ public class TelaLogadoActivity extends AppCompatActivity {
     private ImageButton menuButton;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicial); // Define o layout da atividade
 
         // 1) Referências aos TextViews que funcionam como "toggle headers"
-        TextView highPriorityText   = findViewById(R.id.highPriority);
+        TextView highPriorityText = findViewById(R.id.highPriority);
         TextView mediumPriorityText = findViewById(R.id.mediumPriority);
-        TextView lowPriorityText    = findViewById(R.id.lowPriority);
+        TextView lowPriorityText = findViewById(R.id.lowPriority);
 
         // 2) Referências aos containers que contêm os CheckBoxes
-        LinearLayout highPriorityContainer   = findViewById(R.id.highPriorityContainer);
+        LinearLayout highPriorityContainer = findViewById(R.id.highPriorityContainer);
         LinearLayout mediumPriorityContainer = findViewById(R.id.mediumPriorityContainer);
-        LinearLayout lowPriorityContainer    = findViewById(R.id.lowPriorityContainer);
+        LinearLayout lowPriorityContainer = findViewById(R.id.lowPriorityContainer);
 
         // 3) Inicialmente ocultos
         // Click listener para Alta Prioridade
@@ -124,39 +119,33 @@ public class TelaLogadoActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.navigation_view);
         menuButton = findViewById(R.id.menuButton);
-        navigationView.inflateMenu(R.menu.drawer_menu);
         menuButton.setOnClickListener(v -> openMenu());
 
         configureNavigationView();
     }
 
-    private void openMenu(){
+    private void openMenu() {
         drawerLayout.openDrawer(GravityCompat.START);
     }
 
-    private void configureNavigationView(){
+    private void configureNavigationView() {
         navigationView.setNavigationItemSelectedListener(item -> {
-            Fragment fragment = null;
             int id = item.getItemId();
 
             if (id == R.id.nav_seusdados) {
-                fragment = new SeusDadosFragment();
+                Intent intent = new Intent(TelaLogadoActivity.this, TelaSeusDadosActivity.class);
+                startActivity(intent);
+            } else if (id == R.id.nav_tarefas) {
+                // Inicia a tela de tarefas (TelaTarefas)
+                Intent intent = new Intent(TelaLogadoActivity.this, TelaTarefas.class);
+                startActivity(intent); // Inicia a nova atividade
             }
-            // else if (id == R.id.nav_tarefas) { ... }
-            // else if (...) { ... }
 
-            if (fragment != null) {
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, fragment)
-                        .addToBackStack(null)
-                        .commit();
-            }
             drawerLayout.closeDrawer(GravityCompat.START);
             return true;
         });
-
     }
+}
 
-    }
 
 

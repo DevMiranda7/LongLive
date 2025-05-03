@@ -37,6 +37,12 @@
             android:exported="true"
             />
 
+        <activity android:name=".TelaTarefas"
+            android:exported="true"
+            />
+
+
+
     </application>
 
 </manifest>
