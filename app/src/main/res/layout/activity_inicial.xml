@@ -190,20 +190,6 @@
                 android:paddingStart="16dp"
                 android:paddingTop="8dp"
                 android:paddingBottom="8dp">
-
-                <CheckBox
-                    android:id="@+id/subHigh1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Subtítulo A1"
-                    android:padding="4dp" />
-
-                <CheckBox
-                    android:id="@+id/subHigh2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Subtítulo A2"
-                    android:padding="4dp" />
             </LinearLayout>
 
             <!-- Média Prioridade -->
@@ -227,20 +213,6 @@
                 android:paddingStart="16dp"
                 android:paddingTop="8dp"
                 android:paddingBottom="8dp">
-
-                <CheckBox
-                    android:id="@+id/subMedium1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Subtítulo M1"
-                    android:padding="4dp" />
-
-                <CheckBox
-                    android:id="@+id/subMedium2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Subtítulo M2"
-                    android:padding="4dp" />
             </LinearLayout>
 
             <!-- Baixa Prioridade -->
@@ -264,20 +236,6 @@
                 android:paddingStart="16dp"
                 android:paddingTop="8dp"
                 android:paddingBottom="8dp">
-
-                <CheckBox
-                    android:id="@+id/subLow1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Subtítulo B1"
-                    android:padding="4dp" />
-
-                <CheckBox
-                    android:id="@+id/subLow2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Subtítulo B2"
-                    android:padding="4dp" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

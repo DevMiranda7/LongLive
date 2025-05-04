@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
+import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
@@ -13,11 +13,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class TelaLogadoActivity extends AppCompatActivity {
 
@@ -25,127 +28,159 @@ public class TelaLogadoActivity extends AppCompatActivity {
     private NavigationView navigationView;
     private ImageButton menuButton;
 
+    private List<String> tarefasList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inicial); // Define o layout da atividade
+        setContentView(R.layout.activity_inicial);
 
-        // 1) Referências aos TextViews que funcionam como "toggle headers"
+        initUIComponents();
+        loadUserData();
+        configureNavigationView();
+        loadSavedTasks();
+    }
+
+    private void initUIComponents() {
         TextView highPriorityText = findViewById(R.id.highPriority);
         TextView mediumPriorityText = findViewById(R.id.mediumPriority);
         TextView lowPriorityText = findViewById(R.id.lowPriority);
 
-        // 2) Referências aos containers que contêm os CheckBoxes
         LinearLayout highPriorityContainer = findViewById(R.id.highPriorityContainer);
         LinearLayout mediumPriorityContainer = findViewById(R.id.mediumPriorityContainer);
         LinearLayout lowPriorityContainer = findViewById(R.id.lowPriorityContainer);
 
-        // 3) Inicialmente ocultos
-        // Click listener para Alta Prioridade
-        highPriorityText.setOnClickListener(v -> {
-            if (highPriorityContainer.getVisibility() == View.GONE) {
-                highPriorityContainer.setVisibility(View.VISIBLE); // Torna visível o container
-            } else {
-                highPriorityContainer.setVisibility(View.GONE); // Torna invisível o container
-            }
-        });
+        highPriorityText.setOnClickListener(v -> toggleVisibility(highPriorityContainer));
+        mediumPriorityText.setOnClickListener(v -> toggleVisibility(mediumPriorityContainer));
+        lowPriorityText.setOnClickListener(v -> toggleVisibility(lowPriorityContainer));
 
-        // Click listener para Média Prioridade
-        mediumPriorityText.setOnClickListener(v -> {
-            if (mediumPriorityContainer.getVisibility() == View.GONE) {
-                mediumPriorityContainer.setVisibility(View.VISIBLE);
-            } else {
-                mediumPriorityContainer.setVisibility(View.GONE);
-            }
-        });
-
-        // Click listener para Baixa Prioridade
-        lowPriorityText.setOnClickListener(v -> {
-            if (lowPriorityContainer.getVisibility() == View.GONE) {
-                lowPriorityContainer.setVisibility(View.VISIBLE);
-            } else {
-                lowPriorityContainer.setVisibility(View.GONE);
-            }
-        });
-
-        // 4) Botão para acessar a tela de edição do consumo de água
         Button button = findViewById(R.id.editButton);
         button.setOnClickListener(v -> {
-            Intent intent = new Intent(TelaLogadoActivity.this, TelaEditarConsumoActivity.class); // Cria a intenção para a tela de edição
-            startActivity(intent); // Inicia a nova atividade
+            Intent intent = new Intent(TelaLogadoActivity.this, TelaEditarConsumoActivity.class);
+            startActivity(intent);
+            finish();
         });
 
-        // 5) Recupera a meta diária de consumo de água do SharedPreferences
-        SharedPreferences sharedPreferences = getSharedPreferences("UserPreferences", MODE_PRIVATE);
-        int metaDiaria = sharedPreferences.getInt("metaDiaria", 0); // Pega o valor da meta diária
-
-        // 6) Inicializa componentes do SeekBar
         SeekBar seekBar = findViewById(R.id.seekBar);
         TextView valorAtual = findViewById(R.id.currentValue);
         TextView metaLabel = findViewById(R.id.metaLabel);
 
-        // 7) Exibe a meta diária e o valor inicial do consumo (0 ml)
+        SharedPreferences sharedPreferences = getSharedPreferences("UserPreferences", MODE_PRIVATE);
+        int metaDiaria = sharedPreferences.getInt("metaDiaria", 0);
         metaLabel.setText("Meta: " + metaDiaria + "ml");
         valorAtual.setText("0 ml");
 
-        // 8) Ajusta o SeekBar de acordo com a meta diária
         seekBar.setMax(metaDiaria);
         seekBar.setProgress(0);
 
-        // 9) Configura o comportamento do SeekBar
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                valorAtual.setText(progress + "ml"); // Atualiza o valor exibido com o progresso
+                valorAtual.setText(progress + "ml");
                 if (progress == metaDiaria) {
-                    // Se a meta for alcançada, exibe uma mensagem de sucesso
-                    Toast.makeText(TelaLogadoActivity.this, "Meta alcançada! Você atingiu a sua meta diária de consumo de água", Toast.LENGTH_LONG).show();
+                    Toast.makeText(TelaLogadoActivity.this, "Meta alcançada!", Toast.LENGTH_LONG).show();
                 }
             }
 
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-                // Método vazio, não está sendo utilizado
-            }
+            public void onStartTrackingTouch(SeekBar seekBar) {}
 
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                // Método vazio, não está sendo utilizado
-            }
+            public void onStopTrackingTouch(SeekBar seekBar) {}
         });
-
-
-        drawerLayout = findViewById(R.id.drawer_layout);
-        navigationView = findViewById(R.id.navigation_view);
-        menuButton = findViewById(R.id.menuButton);
-        menuButton.setOnClickListener(v -> openMenu());
-
-        configureNavigationView();
     }
 
-    private void openMenu() {
-        drawerLayout.openDrawer(GravityCompat.START);
+    private void toggleVisibility(LinearLayout container) {
+        if (container.getVisibility() == View.GONE) {
+            container.setVisibility(View.VISIBLE);
+        } else {
+            container.setVisibility(View.GONE);
+        }
+    }
+
+    private void loadUserData() {
+        // Carrega dados do usuário, como a meta diária
     }
 
     private void configureNavigationView() {
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.navigation_view);
+        menuButton = findViewById(R.id.menuButton);
+
+        menuButton.setOnClickListener(v -> drawerLayout.openDrawer(GravityCompat.START));
+
         navigationView.setNavigationItemSelectedListener(item -> {
             int id = item.getItemId();
-
             if (id == R.id.nav_seusdados) {
-                Intent intent = new Intent(TelaLogadoActivity.this, TelaSeusDadosActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(TelaLogadoActivity.this, TelaSeusDadosActivity.class));
             } else if (id == R.id.nav_tarefas) {
-                // Inicia a tela de tarefas (TelaTarefas)
-                Intent intent = new Intent(TelaLogadoActivity.this, TelaTarefas.class);
-                startActivity(intent); // Inicia a nova atividade
+                startActivity(new Intent(TelaLogadoActivity.this, TelaTarefas.class));
             }
-
             drawerLayout.closeDrawer(GravityCompat.START);
             return true;
         });
     }
+
+    private void loadSavedTasks() {
+        SharedPreferences sharedPreferences = getSharedPreferences("TarefaPrefs", MODE_PRIVATE);
+        String tarefasSalvas = sharedPreferences.getString("taskList", "");
+
+        if (!tarefasSalvas.isEmpty()) {
+            String[] tarefas = tarefasSalvas.split(",");
+            for (String item : tarefas) {
+                String[] partes = item.split("\\|");
+                if (partes.length == 2) {
+                    String tarefa = partes[0];
+                    int prioridade = Integer.parseInt(partes[1]);
+
+                    CheckBox checkBox = new CheckBox(this);
+                    checkBox.setText(tarefa);
+
+                    int color = getPriorityColor(prioridade);
+                    checkBox.setTextColor(ContextCompat.getColor(this, color));
+
+                    // Verifique se o estado do checkbox foi salvo
+                    boolean isChecked = sharedPreferences.getBoolean(tarefa, false);
+                    checkBox.setChecked(isChecked);
+
+                    // Adicionar ouvinte para salvar o estado do checkbox
+                    checkBox.setOnCheckedChangeListener((buttonView, isChecked1) -> {
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putBoolean(tarefa, isChecked1); // Salva o estado do checkbox
+                        editor.apply();
+                    });
+
+                    addTaskToPriorityContainer(prioridade, checkBox);
+                }
+            }
+        }
+    }
+
+
+    private int getPriorityColor(int prioridade) {
+        switch (prioridade) {
+            case 1: return R.color.red;
+            case 2: return R.color.yellow;
+            case 3: return R.color.green;
+            default: return R.color.black;
+        }
+    }
+
+    private void addTaskToPriorityContainer(int prioridade, CheckBox checkBox) {
+        LinearLayout container;
+        switch (prioridade) {
+            case 1:
+                container = findViewById(R.id.highPriorityContainer);
+                break;
+            case 2:
+                container = findViewById(R.id.mediumPriorityContainer);
+                break;
+            case 3:
+                container = findViewById(R.id.lowPriorityContainer);
+                break;
+            default:
+                return;
+        }
+        container.addView(checkBox);
+    }
 }
-
-
-

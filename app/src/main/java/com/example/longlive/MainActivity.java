@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         btnAbrirRegistro.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, TelaRegistroActivity.class); // Cria uma intenção para abrir a tela de registro
             startActivity(intent); // Inicia a atividade de registro
+            finish();
         });
 
         // 5) Configura o botão para abrir a tela de login
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         btnAbrirLogin.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, TelaLoginActivity.class); // Cria uma intenção para abrir a tela de login
             startActivity(intent); // Inicia a atividade de login
+            finish();
         });
     }
 }

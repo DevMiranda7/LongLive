@@ -37,9 +37,16 @@
             android:exported="true"
             />
 
+        <activity android:name=".TelaSeusDadosActivity"
+            android:exported="true"
+            />
+
         <activity android:name=".TelaTarefas"
             android:exported="true"
             />
+
+        <activity android:name=".TelaInformacoesFisicasActivity"
+            android:exported="true"/>
 
 
 
