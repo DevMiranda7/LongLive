@@ -3,18 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
 
+    <!-- Barra Superior -->
     <View
         android:id="@+id/topBarHidratacao"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:layout_marginTop="40dp"
         android:background="#9CD9FE"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Botão Voltar -->
     <ImageButton
         android:id="@+id/voltar_inicial"
         android:layout_width="32dp"
@@ -27,6 +29,7 @@
         app:layout_constraintTop_toTopOf="@id/topBarHidratacao"
         app:tint="@android:color/white" />
 
+    <!-- Título -->
     <TextView
         android:id="@+id/titleTextHidratacao"
         android:layout_width="wrap_content"
@@ -40,6 +43,7 @@
         app:layout_constraintStart_toEndOf="@id/voltar_inicial"
         app:layout_constraintTop_toTopOf="@id/topBarHidratacao" />
 
+    <!-- Botão Salvar -->
     <Button
         android:id="@+id/salvarInput"
         android:layout_width="91dp"
@@ -53,6 +57,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/topBarHidratacao" />
 
+    <!-- Definir Consumo -->
     <TextView
         android:id="@+id/textDefinirConsumo"
         android:layout_width="wrap_content"
@@ -65,6 +70,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/topBarHidratacao" />
 
+    <!-- Meta de Hoje -->
     <TextView
         android:id="@+id/textMetaHoje"
         android:layout_width="wrap_content"
@@ -77,6 +83,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textDefinirConsumo" />
 
+    <!-- Edit Text para Meta -->
     <EditText
         android:id="@+id/editMetaDiaria"
         android:layout_width="0dp"
@@ -94,7 +101,7 @@
         app:layout_constraintTop_toTopOf="@id/textMetaHoje"
         app:layout_constraintBottom_toBottomOf="@id/textMetaHoje" />
 
-
+    <!-- Fórmula -->
     <TextView
         android:id="@+id/textFormula"
         android:layout_width="0dp"
@@ -102,7 +109,8 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="24dp"
-        android:text="Defina sua meta de água, caso queria saber a quantidade exata basta aplicar essa fórmula:\n\nLitros necessários = Peso (kg) × 0,035"
+        android:textStyle="bold"
+        android:text="Defina sua meta de água, caso queira saber a quantidade exata basta aplicar essa fórmula:\n\nLitros necessários = Peso (kg) × 0,035"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

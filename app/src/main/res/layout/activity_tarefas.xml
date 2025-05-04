@@ -1,133 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
 
-    <!-- View de fundo -->
-    <Button
-        android:id="@+id/id_prioridadeMaxima"
-        android:layout_width="42dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="226dp"
-        android:layout_marginTop="176dp"
-        android:backgroundTint="#FB4141"
-        android:text="1"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/id_prioridadeBaixa"
-        android:layout_width="42dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="338dp"
-        android:layout_marginTop="174dp"
-        android:backgroundTint="#5CB338"
-        android:text="2"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/id_prioridadeMedia"
-        android:layout_width="42dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="281dp"
-        android:layout_marginTop="176dp"
-        android:backgroundTint="#F9D923"
-        android:text="3"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+    <!-- Faixa superior -->
     <View
         android:id="@+id/TopTaskView"
-        android:layout_width="412dp"
+        android:layout_width="0dp"
         android:layout_height="65dp"
         android:background="#F69B48"
-        android:translationX="-1dp"
-        android:translationY="46dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!-- Título "Tarefas" centralizado abaixo das tarefas criadas -->
-
-    <!-- Campo de texto para digitar a tarefa -->
-
-    <TextView
-        android:id="@+id/id_TextViewTask"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Tarefas"
-        android:textSize="24sp"
-        android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="56dp"
-        android:layout_marginStart="89dp" />
-
-
-    <TextView
-        android:id="@+id/id_TextViewPrioridade"
-        android:layout_width="144dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="236dp"
-        android:layout_marginTop="128dp"
-        android:text="Prioridade"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextTarefa"
-        android:layout_width="178dp"
-        android:layout_height="57dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="175dp"
-        android:hint="Digite sua tarefa"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/id_addTask"
-        android:layout_width="147dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="-10dp"
-        android:layout_marginEnd="16dp"
-        android:text="Criar tarefa"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TopTaskView" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Botão de Voltar -->
     <ImageButton
         android:id="@+id/id_voltarInicio"
         android:layout_width="57dp"
         android:layout_height="48dp"
-        android:layout_marginStart="7dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:background="@null"
         android:src="@drawable/botao_voltar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Lista de tarefas dinâmicas -->
+    <!-- Título -->
+    <TextView
+        android:id="@+id/id_TextViewTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tarefas"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="159dp" />
+
+    <!-- Texto Prioridade -->
+    <TextView
+        android:id="@+id/id_TextViewPrioridade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prioridade"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="112dp"
+        android:layout_marginStart="159dp" />
+
+    <!-- Botões de prioridade -->
+    <Button
+        android:id="@+id/id_prioridadeMaxima"
+        android:layout_width="42dp"
+        android:layout_height="47dp"
+        android:backgroundTint="#FB4141"
+        android:text="1"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="147dp"
+        android:layout_marginStart="132dp" />
+
+    <Button
+        android:id="@+id/id_prioridadeMedia"
+        android:layout_width="42dp"
+        android:layout_height="47dp"
+        android:backgroundTint="#F9D923"
+        android:text="2"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="147dp"
+        android:layout_marginStart="185dp" />
+
+    <Button
+        android:id="@+id/id_prioridadeBaixa"
+        android:layout_width="42dp"
+        android:layout_height="47dp"
+        android:backgroundTint="#5CB338"
+        android:text="3"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="147dp"
+        android:layout_marginStart="237dp" />
+
+    <!-- TextViews abaixo dos botões -->
+    <TextView
+        android:id="@+id/id_TextViewPrioridadeMaxima"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/id_prioridadeMaxima"
+        app:layout_constraintStart_toStartOf="@id/id_prioridadeMaxima"
+        app:layout_constraintEnd_toEndOf="@id/id_prioridadeMaxima" />
+
+    <TextView
+        android:id="@+id/id_TextViewPrioridadeMedia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/id_prioridadeMedia"
+        app:layout_constraintStart_toStartOf="@id/id_prioridadeMedia"
+        app:layout_constraintEnd_toEndOf="@id/id_prioridadeMedia" />
+
+    <TextView
+        android:id="@+id/id_TextViewPrioridadeBaixa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="194dp"
+        android:layout_marginStart="253dp" />
+
+    <!-- Campo tarefa -->
+    <EditText
+        android:id="@+id/editTextTarefa"
+        android:layout_width="379dp"
+        android:layout_height="57dp"
+        android:hint="Digite sua tarefa"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="231dp"
+        android:layout_marginStart="16dp" />
+
+    <!-- Botão adicionar -->
+    <Button
+        android:id="@+id/id_addTask"
+        android:layout_width="147dp"
+        android:layout_height="45dp"
+        android:text="Criar tarefa"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="296dp"
+        android:layout_marginStart="132dp" />
+
+    <!-- Lista de tarefas -->
     <ScrollView
         android:id="@+id/scrollViewTasks"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="411dp"
+        android:layout_height="382dp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTarefa"
-        app:layout_constraintVertical_bias="1.0">
+        android:layout_marginTop="349dp">
 
         <LinearLayout
             android:id="@+id/taskListLayout"
@@ -141,45 +176,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Tarefas criadas:"
-                android:textSize="25sp" />
+                android:textSize="25sp"
+                android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>
-
-    <!-- TextViews de Prioridade -->
-    <TextView
-        android:id="@+id/id_TextViewPrioridadeMedia"
-        android:layout_width="20dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="292dp"
-        android:layout_marginTop="187dp"
-        android:text="2"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/id_TextViewPrioridadeMaxima"
-        android:layout_width="20dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="236dp"
-        android:layout_marginTop="187dp"
-        android:text="1"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/id_TextViewPrioridadeBaixa"
-        android:layout_width="20dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="350dp"
-        android:layout_marginTop="187dp"
-        android:text="3"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

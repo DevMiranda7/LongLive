@@ -9,11 +9,12 @@
     <!-- Faixa superior -->
     <View
         android:id="@+id/viewColorProfissionais"
-        android:layout_width="411dp"
+        android:layout_width="0dp"
         android:layout_height="55dp"
         android:background="?attr/colorPrimary"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageButton
         android:id="@+id/id_voltarInicio"
@@ -21,197 +22,174 @@
         android:layout_height="47dp"
         android:background="@null"
         android:src="@drawable/botao_voltar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/viewColorProfissionais"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="7dp" />
+        android:layout_marginTop="7dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/viewColorProfissionais" />
 
-
-    <!-- ID -->
+    <!-- Título -->
     <TextView
-        android:id="@+id/id_profissioanais"
+        android:id="@+id/id_profissionais"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Seus dados"
+        android:text="Contatos de profissionais"
         android:textAppearance="?attr/textAppearanceHeadline6"
         android:textColor="@android:color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toTopOf="@id/viewColorProfissionais"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/viewColorProfissionais" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
 
+    <!-- Nutricionista -->
     <TextView
         android:id="@+id/id_nutricionista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:paddingLeft="16dp"
-        android:text="ID:"
+        android:paddingStart="16dp"
+        android:text="Nutricionista:"
         android:textAppearance="?attr/textAppearanceBody1"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/viewColorProfissionais" />
+        app:layout_constraintTop_toBottomOf="@id/viewColorProfissionais"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/id_numeroNutri"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="123456"
+        android:text="11 99023-1322"
         android:textAppearance="?attr/textAppearanceBody1"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/id_nutricionista"
-        app:layout_constraintTop_toTopOf="@id/id_nutricionista" />
+        app:layout_constraintTop_toTopOf="@id/id_nutricionista"
+        app:layout_constraintStart_toEndOf="@id/id_nutricionista" />
 
-    <!-- Peso -->
+    <!-- Personal -->
     <TextView
         android:id="@+id/id_personal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:paddingLeft="16dp"
-        android:text="Peso:"
+        android:paddingStart="16dp"
+        android:text="Personal trainer:"
         android:textAppearance="?attr/textAppearanceBody1"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/id_nutricionista" />
+        app:layout_constraintTop_toBottomOf="@id/id_nutricionista"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/id_numeroPersonal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="88kg"
+        android:text="11 99000-1222"
         android:textAppearance="?attr/textAppearanceBody1"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/id_personal"
-        app:layout_constraintTop_toTopOf="@id/id_personal" />
+        app:layout_constraintTop_toTopOf="@id/id_personal"
+        app:layout_constraintStart_toEndOf="@id/id_personal" />
 
-    <!-- Altura -->
+    <!-- Fisioterapeuta -->
     <TextView
         android:id="@+id/id_fisioterapeuta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:paddingLeft="16dp"
-        android:text="Altura:"
+        android:paddingStart="16dp"
+        android:text="Fisioterapeuta:"
         android:textAppearance="?attr/textAppearanceBody1"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/id_personal" />
+        app:layout_constraintTop_toBottomOf="@id/id_personal"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/id_numeroFisio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="1.79"
+        android:text="21 99663-1322"
         android:textAppearance="?attr/textAppearanceBody1"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/id_fisioterapeuta"
-        app:layout_constraintTop_toTopOf="@id/id_fisioterapeuta" />
+        app:layout_constraintTop_toTopOf="@id/id_fisioterapeuta"
+        app:layout_constraintStart_toEndOf="@id/id_fisioterapeuta" />
 
-    <!-- Email -->
+    <!-- Psicólogo -->
     <TextView
         android:id="@+id/id_psicologo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:paddingLeft="16dp"
-        android:text="Email:"
+        android:paddingStart="16dp"
+        android:text="Psicólogo:"
         android:textAppearance="?attr/textAppearanceBody1"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/id_fisioterapeuta" />
+        app:layout_constraintTop_toBottomOf="@id/id_fisioterapeuta"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/id_numeroPsico"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="marcosfelipe@gmail.com"
+        android:text="12 99021-1555"
         android:textAppearance="?attr/textAppearanceBody1"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/id_psicologo"
-        app:layout_constraintTop_toTopOf="@id/id_psicologo" />
+        app:layout_constraintTop_toTopOf="@id/id_psicologo"
+        app:layout_constraintStart_toEndOf="@id/id_psicologo" />
 
-    <!-- Gênero -->
+    <!-- Terapeuta -->
     <TextView
         android:id="@+id/id_terapeuta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:paddingLeft="16dp"
-        android:text="Gênero:"
+        android:paddingStart="16dp"
+        android:text="Terapeuta:"
         android:textAppearance="?attr/textAppearanceBody1"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/id_psicologo" />
+        app:layout_constraintTop_toBottomOf="@id/id_psicologo"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/id_numeroTerapeuta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="Masculino"
+        android:text="11 99212-7984"
         android:textAppearance="?attr/textAppearanceBody1"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/id_terapeuta"
-        app:layout_constraintTop_toTopOf="@id/id_terapeuta" />
-
-    <!-- IMC -->
-    <TextView
-        android:id="@+id/id_seuImcText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:paddingLeft="16dp"
-        android:text="IMC:"
-        android:textAppearance="?attr/textAppearanceBody1"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/id_terapeuta" />
-
-    <TextView
-        android:id="@+id/id_seuImcUsuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="ALTO"
-        android:textAppearance="?attr/textAppearanceBody1"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/id_seuImcText"
-        app:layout_constraintTop_toTopOf="@id/id_seuImcText" />
+        app:layout_constraintTop_toTopOf="@id/id_terapeuta"
+        app:layout_constraintStart_toEndOf="@id/id_terapeuta" />
 
     <!-- Recomendações -->
+
+    <!-- Imagem -->
     <TextView
-        android:id="@+id/id_recomedacaoInfo"
+        android:id="@+id/id_recomendacaoInfo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="44dp"
         android:padding="16dp"
-        android:text="De acordo com seu IMC, você deve realizar uma dieta. Consulte a aba de contatos de profissionais recomendados pelo Long Live."
+        android:text="Caso precise de ajuda com alguma situação, entre em contato com nossos profissionais altamente qualificados."
         android:textAlignment="center"
         android:textAppearance="?attr/textAppearanceBody2"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_terapeuta"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/id_seuImcText" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Imagem -->
+
     <ImageView
         android:id="@+id/iconApp"
         android:layout_width="260dp"
         android:layout_height="210dp"
         android:layout_marginTop="32dp"
         android:scaleType="fitCenter"
-        app:layout_constraintDimensionRatio="1.25"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_recomendacaoInfo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/id_recomedacaoInfo"
+        app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/core_clean" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

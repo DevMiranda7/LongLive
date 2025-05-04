@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
 
     <!-- Título Registro -->
     <TextView
@@ -57,6 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:textStyle="bold"
         android:layout_marginTop="20dp"
         android:padding="10dp"
         android:text="Gênero"
@@ -80,6 +82,7 @@
             android:id="@+id/rbMasculino"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:text="Masculino" />
 
         <!-- RadioButton Feminino -->
@@ -87,12 +90,14 @@
             android:id="@+id/rbFeminino"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:text="Feminino" />
 
         <!-- RadioButton Outro -->
         <RadioButton
             android:id="@+id/rbOutro"
             android:layout_width="92dp"
+            android:textStyle="bold"
             android:layout_height="34dp"
             android:text="Outro" />
     </RadioGroup>
@@ -103,6 +108,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#45474B"
+        android:textStyle="bold"
         android:text="Registrar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -115,6 +115,10 @@ public class TelaLogadoActivity extends AppCompatActivity {
                 startActivity(new Intent(TelaLogadoActivity.this, TelaSeusDadosActivity.class));
             } else if (id == R.id.nav_tarefas) {
                 startActivity(new Intent(TelaLogadoActivity.this, TelaTarefas.class));
+            } else if (id == R.id.nav_editar_perfil) {
+                startActivity(new Intent(TelaLogadoActivity.this, TelaEditarPerfilActivity.class));
+            }else if (id == R.id.nav_contatos_profissionais) {
+                startActivity(new Intent(TelaLogadoActivity.this, TelaContatosProfissionais.class));
             }
             drawerLayout.closeDrawer(GravityCompat.START);
             return true;
