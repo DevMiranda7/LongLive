@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    android:background="#E8F9FF">
 
     <!-- Barra Superior -->
     <View
         android:id="@+id/topBarHidratacao"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:background="#9CD9FE"
+        android:background="#AFDDFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -50,7 +51,7 @@
         android:layout_height="39dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:backgroundTint="#A58CE0"
+        android:backgroundTint="#328E6E"
         android:text="Salvar"
         android:textStyle="bold"
         android:textColor="@android:color/white"
@@ -64,6 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginTop="48dp"
+        android:textColor="#3D3D3D"
         android:text="Definir consumo de água"
         android:textStyle="bold"
         android:textSize="25sp"
@@ -77,6 +79,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginTop="28dp"
+        android:textColor="#3D3D3D"
         android:text="Meta de hoje:"
         android:textStyle="bold"
         android:textSize="25sp"
@@ -93,6 +96,7 @@
         android:background="@android:color/transparent"
         android:inputType="number"
         android:text="0"
+        android:textColor="#FFB200"
         android:textSize="25sp"
         android:textAlignment="center"
         android:textStyle="bold"
@@ -110,6 +114,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="24dp"
         android:textStyle="bold"
+        android:textColor="#3D3D3D"
         android:text="Defina sua meta de água, caso queira saber a quantidade exata basta aplicar essa fórmula:\n\nLitros necessários = Peso (kg) × 0,035"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"

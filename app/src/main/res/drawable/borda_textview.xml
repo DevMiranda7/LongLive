@@ -3,5 +3,5 @@
     <stroke
         android:width="2dp"
         android:color="@android:color/transparent" /> <!-- borda preta -->
-    <corners android:radius="15dp" /> <!-- cantos arredondados, opcional -->
+    <corners android:radius="16dp" /> <!-- cantos arredondados, opcional -->
 </shape>

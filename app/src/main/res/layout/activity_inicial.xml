@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
+    android:background="#F5F7F8"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context=".MainActivity">
@@ -11,7 +12,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFF7FB"
+        android:background="#F5F7F8"
         android:fitsSystemWindows="true"
         tools:context=".MainActivity">
 
@@ -53,7 +54,7 @@
             android:id="@+id/blueBar"
             android:layout_width="0dp"
             android:layout_height="70dp"
-            android:background="#9CD9FE"
+            android:background="#AFDDFF"
             app:layout_constraintTop_toBottomOf="@id/topBarHidratacao"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -92,7 +93,7 @@
             android:layout_width="100dp"
             android:layout_height="40dp"
             android:text="Editar"
-            android:backgroundTint="#A58CE0"
+            android:backgroundTint="#EF9651"
             android:textStyle="bold"
             android:textColor="@android:color/white"
             app:layout_constraintTop_toBottomOf="@id/consumoText"
@@ -134,6 +135,8 @@
                 android:id="@+id/seekBar"
                 android:layout_width="250dp"
                 android:layout_height="40dp"
+                android:progressTint="#AFDDFF"
+                app:thumbTint="#AFDDFF"
                 app:layout_constraintTop_toBottomOf="@id/currentValue"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />

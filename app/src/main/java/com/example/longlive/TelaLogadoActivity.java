@@ -119,6 +119,14 @@ public class TelaLogadoActivity extends AppCompatActivity {
                 startActivity(new Intent(TelaLogadoActivity.this, TelaEditarPerfilActivity.class));
             }else if (id == R.id.nav_contatos_profissionais) {
                 startActivity(new Intent(TelaLogadoActivity.this, TelaContatosProfissionais.class));
+            }else if (id == R.id.nav_notificacoes) {
+                startActivity(new Intent(TelaLogadoActivity.this, TelaNotificacoesActivity.class));
+            }else if (id == R.id.nav_sair) {
+                startActivity(new Intent(TelaLogadoActivity.this, MainActivity.class));
+            }else if (id == R.id.nav_suporte) {
+                startActivity(new Intent(TelaLogadoActivity.this, TelaSuporteActivity.class));
+            }else{
+                startActivity(new Intent(TelaLogadoActivity.this, TelaTreinoActivity.class));
             }
             drawerLayout.closeDrawer(GravityCompat.START);
             return true;

@@ -54,6 +54,15 @@
         <activity android:name=".TelaContatosProfissionais"
             android:exported="true"/>
 
+        <activity android:name=".TelaNotificacoesActivity"
+            android:exported="true"/>
+
+        <activity android:name=".TelaSuporteActivity"
+            android:exported="true"/>
+
+        <activity android:name=".TelaTreinoActivity"
+            android:exported="true"/>
+
     </application>
 
 </manifest>

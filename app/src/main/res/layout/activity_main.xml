@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#9DDAFF"
+    android:background="#AFDDFF"
     tools:context=".MainActivity">
 
     <TextView
@@ -60,12 +60,14 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="24dp"
-        android:src="@drawable/img"
+        android:src="@drawable/garrafadeagua"
+        android:background="#AFDDFF"
         app:layout_constraintTop_toBottomOf="@id/titleTextHidratacao"
         app:layout_constraintStart_toEndOf="@id/treino"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="32dp" />
+
 
     <Button
         android:id="@+id/id_login"

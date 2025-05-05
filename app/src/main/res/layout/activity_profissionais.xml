@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F5F7F8"
     android:fitsSystemWindows="true">
 
     <!-- Faixa superior -->
@@ -11,7 +12,7 @@
         android:id="@+id/viewColorProfissionais"
         android:layout_width="0dp"
         android:layout_height="55dp"
-        android:background="?attr/colorPrimary"
+        android:background="#45474B"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

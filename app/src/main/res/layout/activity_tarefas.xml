@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F5F7F8"
     android:fitsSystemWindows="true">
 
     <!-- Faixa superior -->
@@ -59,7 +60,7 @@
         android:id="@+id/id_prioridadeMaxima"
         android:layout_width="42dp"
         android:layout_height="47dp"
-        android:backgroundTint="#FB4141"
+        android:backgroundTint="#D32F2F"
         android:text="1"
         android:textColor="@color/black"
         android:textSize="16sp"
@@ -72,7 +73,7 @@
         android:id="@+id/id_prioridadeMedia"
         android:layout_width="42dp"
         android:layout_height="47dp"
-        android:backgroundTint="#F9D923"
+        android:backgroundTint="#FFB300"
         android:text="2"
         android:textColor="@color/black"
         android:textSize="16sp"
@@ -85,7 +86,7 @@
         android:id="@+id/id_prioridadeBaixa"
         android:layout_width="42dp"
         android:layout_height="47dp"
-        android:backgroundTint="#5CB338"
+        android:backgroundTint="#81C784"
         android:text="3"
         android:textColor="@color/black"
         android:textSize="16sp"
@@ -150,6 +151,7 @@
         android:layout_width="147dp"
         android:layout_height="45dp"
         android:text="Criar tarefa"
+        android:backgroundTint="#328E6E"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="296dp"
